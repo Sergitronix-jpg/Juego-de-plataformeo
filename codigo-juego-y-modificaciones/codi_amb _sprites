@@ -115,7 +115,7 @@ pokeball_texture = None
 def load_textures():
     global player_texture, player_ducking_texture, platform_texture, float_platform_texture, enemy_texture, pokeball_texture
 
-    # Player texture (Pokémon trainer standing)
+    #                                                                                                                   Player texture (Pokémon trainer standing)
     # player_texture = pygame.Surface(PLAYER_SIZE, pygame.SRCALPHA)
     # pygame.draw.circle(player_texture, BLUE, (20, 20), 20)  # Head
     # pygame.draw.circle(player_texture, WHITE, (15, 15), 5)  # Left eye
@@ -125,7 +125,7 @@ def load_textures():
     # pygame.draw.rect(player_texture, RED, (15, 25, 10, 5))  # Mouth
     player_texture = pygame.image.load('assets/pikachu.png')
 
-    # Player texture (Pokémon trainer ducking)
+    #                                                                                                                   Player texture (Pokémon trainer ducking)
     # player_ducking_texture = pygame.Surface(PLAYER_SIZE_DUCKING, pygame.SRCALPHA)
     # pygame.draw.circle(player_ducking_texture, BLUE, (20, 10), 10)  # Smaller head
     # pygame.draw.circle(player_ducking_texture, WHITE, (17, 8), 3)  # Left eye
@@ -135,27 +135,27 @@ def load_textures():
     # pygame.draw.rect(player_ducking_texture, RED, (18, 12, 5, 3))  # Mouth
     player_ducking_texture = pygame.image.load('assets/pikachu_baix.png')
 
-    # Ground texture
+    #                                                                                                                   Ground texture
     platform_texture = pygame.Surface((50, 50))
     platform_texture.fill(GREEN)
     pygame.draw.rect(platform_texture, DARK_BROWN, (0, 0, 50, 50), 2)
     pygame.draw.line(platform_texture, DARK_BROWN, (0, 10), (50, 10), 2)
 
-    # Floating platform texture
+    #                                                                                                                   Floating platform texture
     float_platform_texture = pygame.Surface((50, 30))
     float_platform_texture.fill(BROWN)
     pygame.draw.rect(float_platform_texture, DARK_BROWN, (0, 0, 50, 30), 2)
     pygame.draw.line(float_platform_texture, DARK_BROWN, (0, 10), (50, 10), 2)
 
-    # Enemy texture (wild Pokémon)
+    #                                                                                                                   Enemy texture (wild Pokémon)
     # enemy_texture = pygame.Surface((30, 30), pygame.SRCALPHA)
     # pygame.draw.circle(enemy_texture, RED, (15, 15), 15)  # Body
     # pygame.draw.circle(enemy_texture, BLACK, (10, 10), 4)  # Left eye
     # pygame.draw.circle(enemy_texture, BLACK, (20, 10), 4)  # Right eye
     # pygame.draw.line(enemy_texture, BLACK, (10, 20), (20, 20), 2)  # Mouth
-    enemy_texture =  pygame.image.load('assets/pikachu.png')
+    enemy_texture =  pygame.image.load('assets/animal5.png')
 
-    # Poké Ball texture
+    #                                                                                                                   Poké Ball texture
     # pokeball_texture = pygame.Surface((20, 20), pygame.SRCALPHA)
     pokeball_texture = pygame.image.load('assets/ultraball.png')
     # pygame.draw.circle(pokeball_texture, WHITE, (10, 10), 10)  # Bottom half
@@ -167,13 +167,13 @@ def load_textures():
 # Load textures
 load_textures()
 
-# Player hitbox
+#                                                                                                                       Player hitbox
 def get_player_hitbox(x, y, ducking):
     if ducking:
         return pygame.Rect(x + 10, y + 10, 20, 10)
     return pygame.Rect(x + 5, y + 5, 30, 30)
 
-# Menu functions
+#                                                                                                                       Menu functions
 def show_start_menu():
     screen.fill(BLACK)
     font = pygame.font.SysFont('Arial', 50)
@@ -202,7 +202,7 @@ def show_victory_screen(time_taken, score, collected_pokeballs, total_pokeballs,
         screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 4 + i * 60))
     pygame.display.flip()
 
-# Main game loop
+#                                                                                                                       Main game loop
 def main():
     clock = pygame.time.Clock()
     running = True
@@ -233,11 +233,11 @@ def main():
                         if gs.jump_count == 0:
                             gs.velocity_y = JUMP_STRENGTH
                         else:
-                            gs.velocity_y = DOUBLE_JUMP_STRENGTH  # Double jump
+                            gs.velocity_y = DOUBLE_JUMP_STRENGTH  #                                                     Double jump
                         gs.jump_count += 1
 
             if gs.alive:
-                # Player input
+                #                                                                                                       Player input
                 if keys[pygame.K_LEFT] and gs.player_x > 0:
                     gs.player_x -= PLAYER_SPEED
                 if keys[pygame.K_RIGHT] and gs.player_x < WIDTH - PLAYER_SIZE[0]:
@@ -248,7 +248,7 @@ def main():
                 next_y = gs.player_y + gs.velocity_y
                 player_hitbox = get_player_hitbox(gs.player_x, next_y, gs.is_ducking)
 
-                # Check platform collisions (skip if ducking and falling)
+                #                                                                                                       Check platform collisions (skip if ducking and falling)
                 on_ground = False
                 if not (gs.is_ducking and gs.velocity_y > 0):  # Allow passing through platforms while ducking and falling
                     for platform in gs.platforms:
@@ -263,16 +263,16 @@ def main():
                                 gs.velocity_y = 0
                             break
 
-                # Apply gravity only if not on ground
+                #                                                                                                       Apply gravity only if not on ground
                 if not on_ground:
                     gs.velocity_y = min(gs.velocity_y + GRAVITY, MAX_FALL_SPEED)
                     gs.player_y = next_y
 
-                # Prevent falling through bottom
+                #                                                                                                       Prevent falling through bottom
                 if gs.player_y > HEIGHT:
                     gs.alive = False
 
-                # Poké Ball collection
+                #                                                                                                       Poké Ball collection
                 player_hitbox = get_player_hitbox(gs.player_x, gs.player_y, gs.is_ducking)
                 for pokeball in gs.pokeballs[:]:
                     if player_hitbox.colliderect(pokeball):
@@ -280,7 +280,7 @@ def main():
                         gs.collected_pokeballs += 1
                         gs.score += 10
 
-                # Enemy movement and collision
+                #                                                                                                       Enemy movement and collision
                 for i, enemy in enumerate(gs.enemies):
                     enemy.x += gs.enemy_speeds[i]
                     if enemy.left <= 0 or enemy.right >= WIDTH:
@@ -291,7 +291,7 @@ def main():
                 # Update score based on time
                 gs.score += 0.1
 
-                # Victory condition
+                #                                                                                                       Victory condition
                 if not gs.pokeballs:
                     time_taken = time.time() - gs.start_time
                     show_victory_screen(time_taken, int(gs.score), gs.collected_pokeballs, gs.total_pokeballs, gs.level)
@@ -313,7 +313,7 @@ def main():
                                     return
                     game_state = 'menu'
 
-            # Drawing
+            #                                                                                                           Drawing
             screen.fill(BLACK)
             for platform in gs.platforms:
                 texture = platform_texture if platform.height == 50 else float_platform_texture
@@ -329,7 +329,7 @@ def main():
             else:
                 screen.blit(player_texture, (gs.player_x, gs.player_y))
 
-            # HUD
+            #                                                                                                           HUD
             font = pygame.font.SysFont('Arial', 30)
             time_text = font.render(f'Time: {time.time() - gs.start_time:.2f}s', True, WHITE)
             pokeball_text = font.render(f'Poké Balls: {gs.collected_pokeballs}/{gs.total_pokeballs}', True, WHITE)

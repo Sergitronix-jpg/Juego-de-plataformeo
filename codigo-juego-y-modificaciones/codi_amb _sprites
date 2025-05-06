@@ -48,15 +48,26 @@ class GameState:
         self.start_time = time.time()
 
         #                                                                                                               Platforms for each level
+
         if self.level == 1:
+            self.platforms = [
+                pygame.Rect(0, HEIGHT - 50, 2000, 50),  # Groun
+            ]
+        if self.level == 2:
+            self.platforms = [
+                pygame.Rect(0, HEIGHT - 50, 2000, 50),  # Ground
+                pygame.Rect(350, HEIGHT - 200, 400, 30),
+
+            ]
+        if self.level == 3:
             self.platforms = [
                 pygame.Rect(0, HEIGHT - 50, 2000, 50),  # Ground
                 pygame.Rect(600, HEIGHT - 250, 350, 30),
-                pygame.Rect(1400, HEIGHT - 400, 350, 30),
+                pygame.Rect(1400, HEIGHT - 350, 350, 30),
                 pygame.Rect(200, HEIGHT - 150, 300, 30),
 
             ]
-        elif self.level == 2:
+        elif self.level == 4:
             self.platforms = [
                 pygame.Rect(0, HEIGHT - 50, 2500, 50),  # Ground
                 pygame.Rect(150, HEIGHT - 200, 400, 30),
@@ -64,7 +75,7 @@ class GameState:
                 pygame.Rect(650, HEIGHT - 300, 350, 30),
                 pygame.Rect(1600, HEIGHT - 500, 350, 30),
             ]
-        elif self.level == 3:
+        elif self.level == 5:
             self.platforms = [
                 pygame.Rect(100, HEIGHT - 50,250, 50),  # Ground
                 pygame.Rect(650, HEIGHT - 50, 200, 50),
@@ -74,7 +85,7 @@ class GameState:
                 pygame.Rect(100, HEIGHT - 300, 400, 30),
                 pygame.Rect(900, HEIGHT - 400, 400, 30),
             ]
-        elif self.level == 4:
+        elif self.level == 6:
             self.platforms = [
                 pygame.Rect(100, HEIGHT - 50, 100, 50),  # Ground
                 pygame.Rect(850, HEIGHT - 50, 150, 50),
@@ -84,7 +95,7 @@ class GameState:
                 pygame.Rect(900, HEIGHT - 300, 400, 30),
                 pygame.Rect(100, HEIGHT - 500, 400, 30),
             ]
-        elif self.level == 5:
+        elif self.level == 7:
             self.platforms = [
                 pygame.Rect(100, HEIGHT - 50, 100, 50),  # Ground
                 pygame.Rect(850, HEIGHT - 50, 150, 50),
@@ -93,7 +104,7 @@ class GameState:
                 pygame.Rect(800, HEIGHT - 600, 400, 30),
                 pygame.Rect(50, HEIGHT - 500, 200, 30),
             ]
-        elif self.level == 6:
+        elif self.level == 7:
             self.platforms = [
                 pygame.Rect(100, HEIGHT - 50, 100, 50),  # Ground
                 pygame.Rect(850, HEIGHT - 50, 150, 50),
@@ -104,7 +115,7 @@ class GameState:
                 pygame.Rect(550, HEIGHT - 350, 100, 30),
                 pygame.Rect(1950, HEIGHT - 350, 200, 30),
             ]
-        elif self.level == 7:
+        elif self.level == 9:
             self.platforms = [
                 pygame.Rect(100, HEIGHT - 50, 50, 50),
                 pygame.Rect(850, HEIGHT - 50, 100, 50),
@@ -170,29 +181,15 @@ enemy_texture2 = None
 def load_textures():
     global player_texture, player_ducking_texture, platform_texture, float_platform_texture, pokeball_texture, player_texture_run1, player_texture_run2, enemy_texture1, enemy_texture2
 
-
     player_texture = pygame.image.load('assets/pikachu.png')
-
-
     player_texture_run1 = pygame.image.load('assets/pikachu_corre13.png')
     player_texture_run2 = pygame.image.load('assets/pikachu_corre23.png')
-
-
     player_ducking_texture = pygame.image.load('assets/pikachu_baix2.png')
 
-    #                                                                                                                   Ground texture
-    platform_texture = pygame.Surface((50, 50))
-    platform_texture.fill(GREEN)
-    pygame.draw.rect(platform_texture, DARK_BROWN, (0, 0, 50, 50), 2)
-    pygame.draw.line(platform_texture, DARK_BROWN, (0, 10), (50, 10), 2)
+    platform_texture = pygame.image.load('assets/plataforma1.png')
+    float_platform_texture = pygame.image.load('assets/plataforma1.png')
 
-    #                                                                                                                   Floating platform texture
-    float_platform_texture = pygame.Surface((50, 30))
-    float_platform_texture.fill(BROWN)
-    pygame.draw.rect(float_platform_texture, DARK_BROWN, (0, 0, 50, 30), 2)
-    pygame.draw.line(float_platform_texture, DARK_BROWN, (0, 10), (50, 10), 2)
 
-    #                                                                                                                   Enemy texture (wild Pokémon)
     enemy_texture1 =  pygame.image.load('assets/volador1.png')
     enemy_texture2 = pygame.image.load('assets/volador2.png')
 
@@ -228,17 +225,13 @@ def show_victory_screen(time_taken, collected_pokeballs, total_pokeballs, level)
         font.render(f'Level {level} Completed!', True, WHITE),
         font.render(f'Poké Balls: {collected_pokeballs}/{total_pokeballs}', True, WHITE),
         font.render(f'Time: {time_taken:.2f} seconds', True, WHITE),
-        font.render('1 - Seguent Nivell', True, WHITE),
+        font.render('1 - Següent Nivell', True, WHITE),
         font.render('2 - Tornar al Nivell', True, WHITE),
         font.render('ESC - Sortir', True, WHITE)
     ]
     for i, text in enumerate(texts):
         screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 4 + i * 60))
     pygame.display.flip()
-
-
-
-
 
 #                                                                                                                       Main game loop
 def main():
@@ -284,7 +277,6 @@ def main():
                     if event.key == pygame.K_SPACE:
                         pokemon_state = "ajupit"
                         player_ducking_texture = pygame.image.load('assets/pikachu_baix2.png')
-
                     if event.key == pygame.K_UP and gs.jump_count < 2 and not gs.is_ducking:
                         pokemon_state = "peu"
                         if gs.jump_count == 0:
@@ -295,6 +287,7 @@ def main():
                     if event.key == pygame.K_UP:
                         pokemon_state = "ajupit"
                         player_ducking_texture = pygame.image.load('assets/pikachu_baix2.png')
+
 
             if gs.alive:
                 #                                                                                                       Player input
@@ -360,8 +353,6 @@ def main():
                         aux = True
                         if gs.enemy_speeds[i] < 0:
                             aux = False
-                        # sprite3 = pygame.transform.flip(sprite2, aux, 0)
-                        # screen.blit(sprite3, (gs.player_x, gs.player_y + 20))
                     if player_hitbox.colliderect(enemy):
                         gs.alive = False
 
@@ -391,8 +382,11 @@ def main():
             screen.fill(BLACK)
             for platform in gs.platforms:
                 texture = platform_texture if platform.height == 50 else float_platform_texture
+                #
                 for x in range(0, platform.width, 50):
                     screen.blit(texture, (platform.x + x, platform.y))
+            #   scaled_texture = pygame.transform.scale(texture, (platform.width, platform.height))
+            #   screen.blit(scaled_texture, (platform.x, platform.y))
             for pokeball in gs.pokeballs:
                 screen.blit(pokeball_texture, (pokeball.x, pokeball.y))
             for i, enemy in enumerate(gs.enemies):

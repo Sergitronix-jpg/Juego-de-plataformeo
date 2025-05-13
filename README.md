@@ -1,5 +1,6 @@
-<h1>Pokémon Quest: Aventura Pixelada – Introducción</h1>
+<h1>Pokémon Quest: Una Aventura Pixelada </h1>
 
+<h2>Pequeña historia</h2>
 
 Prepárate para embarcarte en una emocionante aventura de plataformas en Pokémon Quest, un juego que combina la nostalgia del universo Pokémon con la adrenalina de los desafíos arcade. En este mundo lleno de color y con un encantador estilo visual cúbico, asumirás el rol de un Pokémon intrépido que se lanza a la exploración de islas misteriosas y llenas de secretos por descubrir.
 

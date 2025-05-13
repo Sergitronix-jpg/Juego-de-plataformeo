@@ -1,8 +1,6 @@
-<h1>Pokémon Quest: Una Aventura Pixelada </h1>
+<h1><b>Pokémon Quest: Una Aventura Pixelada</b></h1>
 
-<h2>Pequeña historia</h2>
-
-Prepárate para embarcarte en una emocionante aventura de plataformas en Pokémon Quest, un juego que combina la nostalgia del universo Pokémon con la adrenalina de los desafíos arcade. En este mundo lleno de color y con un encantador estilo visual cúbico, asumirás el rol de un Pokémon intrépido que se lanza a la exploración de islas misteriosas y llenas de secretos por descubrir.
+<p>Prepárate para embarcarte en una emocionante aventura de plataformas en Pokémon Quest, un juego que combina la nostalgia del universo Pokémon con la adrenalina de los desafíos arcade. En este mundo lleno de color y con un encantador estilo visual cúbico, asumirás el rol de un Pokémon intrépido que se lanza a la exploración de islas misteriosas y llenas de secretos por descubrir.
 
 El objetivo principal de tu misión es recolectar Pokéballs, que funcionan como monedas valiosas repartidas a lo largo de cada nivel. Estas Pokéballs no solo representan tu progreso, sino que también son esenciales para desbloquear nuevas zonas, debido a que si no las recojes todas mueres y no puedes pasar de nivel. Sin embargo, no todo será tan sencillo…
 
@@ -15,3 +13,4 @@ Además, el juego incluye distintos tipos de niveles, que no solo ofrecen nuevos
 Ya seas un fan veterano de Pokémon o un amante de los juegos de plataformas, Pokémon Quest te ofrece una experiencia única: rápida, desafiante y encantadora. Así que prepárate, elige tu Pokémon favorito, y adéntrate en esta épica cacería de Pokéballs, donde cada salto puede ser el que te lleve a la victoria… o a la derrota.
 
 ¿Estás listo para el reto? ¡La aventura comienza ahora!
+</p>

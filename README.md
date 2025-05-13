@@ -9,7 +9,7 @@ A lo largo del camino te enfrentarás a una gran variedad de enemigos salvajes y
 
 La clave del éxito en Pokémon Quest reside en tu habilidad para saltar con precisión, esquivar con inteligencia y mantener el ritmo sin perder el enfoque. Cada nivel está diseñado para poner a prueba tus reflejos, pero también tu capacidad para observar patrones y anticiparte a los movimientos enemigos.
 
-Además, el juego incluye distintos tipos de ambientacion, que no solo ofrecen nuevos desafíos, sino también una experiencia visual y sonora envolvente que te sumerge por completo en esta aventura Pokémon reinventada.
+Además, el juego incluye distintos tipos de niveles, que no solo ofrecen nuevos desafíos, sino también una experiencia visual y sonora envolvente que te sumerge por completo en esta nueva aventura Pokémon reinventada.
 
 Ya seas un fan veterano de Pokémon o un amante de los juegos de plataformas, Pokémon Quest te ofrece una experiencia única: rápida, desafiante y encantadora. Así que prepárate, elige tu Pokémon favorito, y adéntrate en esta épica cacería de Pokéballs, donde cada salto puede ser el que te lleve a la victoria… o a la derrota.
 

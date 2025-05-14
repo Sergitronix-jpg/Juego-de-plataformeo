@@ -20,3 +20,9 @@ Ya seas un fan veterano de Pokémon o un amante de los juegos de plataformas, Po
 
 Logo:        
 ![Logo](https://github.com/user-attachments/assets/77b58e0a-b7a8-4f37-ab98-4e87cb36ed32)
+
+Captures:
+![image](https://github.com/user-attachments/assets/9e370e6e-5624-4d17-ac04-e3856a6e3c30) ![image](https://github.com/user-attachments/assets/34d2e6a5-8a37-4b35-84a8-a1761c2d414e) ![image](https://github.com/user-attachments/assets/24650173-58f4-481f-a3c0-1c43b5d3553e)
+![image](https://github.com/user-attachments/assets/11d45c60-a5fa-4bb3-a4fa-1caf39796cf4)
+
+

@@ -18,4 +18,4 @@ Ya seas un fan veterano de Pokémon o un amante de los juegos de plataformas, Po
 
 
 
-Logo:![Logo](https://github.com/user-attachments/assets/77b58e0a-b7a8-4f37-ab98-4e87cb36ed32)
+Logo:          ![Logo](https://github.com/user-attachments/assets/77b58e0a-b7a8-4f37-ab98-4e87cb36ed32)

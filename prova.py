@@ -4,9 +4,9 @@ import time
 
 # Initialize Pygame
 pygame.init()
-pygame.mixer.music.load('assets/musica1.mp3')
+pygame.mixer.music.load('assets/musica2.mp3')
 pygame.mixer.music.play()
-
+pygame.mixer.music.play(-1)
 
 AMPLADA = 1024
 ALTURA = 720
@@ -314,6 +314,8 @@ def main():
                     if event.key == pygame.K_RETURN:
                         game_state = 'playing'
                         gs.start_time = time.time()
+                        pygame.mixer.music.load('assets/musica1.mp3')
+                        pygame.mixer.music.play()
                     if event.key == pygame.K_SPACE:
                         game_state = 'credits'
                         gs.start_time = time.time()
@@ -480,10 +482,12 @@ def main():
                                     gs.reset(gs.level+1)
                                     gs.start_time = time.time()
                                     waiting = False
+                                    pygame.mixer.music.play()
                                 if event.key == pygame.K_2:
                                     gs.reset(gs.level)
                                     gs.start_time = time.time()
                                     waiting = False
+                                    pygame.mixer.music.play()
                                 if event.key == pygame.K_ESCAPE:
                                     return
 
@@ -548,9 +552,12 @@ def main():
                     game_state = 'menu'
                     gs.reset(gs.level)
                     gs.start_time = time.time()
+                    pygame.mixer.music.load('assets/musica2.mp3')
+                    pygame.mixer.music.play()
                 if keys[pygame.K_r]:
                     gs.reset(gs.level)
                     gs.start_time = time.time()
+                    pygame.mixer.music.play()
 
             pygame.display.flip()
             clock.tick(60)

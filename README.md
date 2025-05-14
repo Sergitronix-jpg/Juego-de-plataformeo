@@ -25,4 +25,4 @@ Captures:
 ![image](https://github.com/user-attachments/assets/9e370e6e-5624-4d17-ac04-e3856a6e3c30) ![image](https://github.com/user-attachments/assets/34d2e6a5-8a37-4b35-84a8-a1761c2d414e) ![image](https://github.com/user-attachments/assets/24650173-58f4-481f-a3c0-1c43b5d3553e)
 ![image](https://github.com/user-attachments/assets/11d45c60-a5fa-4bb3-a4fa-1caf39796cf4)
 
-
+El treball ha sigut realitzat en un mes per l'Arnau, el Sergio y el Mohamed, ha sigut un altibaix desesperant crear el joc pero amb ajuda de videos i d'IA ens hem pogut arreglar, al principi varem començar amb un codi el qual tenia un munt de fallades, el qual poc a poc vam anar corretgint fins la part final 

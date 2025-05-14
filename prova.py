@@ -231,14 +231,10 @@ def get_player_hitbox(x, y, ducking):
 # Menu functions
 def show_start_menu():
     screen.fill(C4)
-    imprimir_pantalla_fons('assets/fondo12.png')
+    imprimir_pantalla_fons('assets/fonsmenu.png')
     font = pygame.font.SysFont('Arial', 50)
     texts = [
-        font.render('Pokémon Platformer: Poké Ball Quest', True, WHITE),
-        font.render('Presiona ENTER per Començar', True, WHITE),
-        font.render('Presiona ESPAI per veure Credits', True, WHITE),
-        font.render('Presiona A per obtenir Ajuda', True, WHITE),
-        font.render('Presiona ESC per Sortir', True, WHITE)
+        font.render(' ', True, WHITE)
     ]
     for i, text in enumerate(texts):
         screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 4 + i * 100))
@@ -246,6 +242,7 @@ def show_start_menu():
 
 def show_credits():
     screen.fill(C4)
+    imprimir_pantalla_fons('assets/fondocredits.png')
     font = pygame.font.SysFont('Arial', 50)
     texts = [
         font.render('CREDITS', True, WHITE),
@@ -260,6 +257,7 @@ def show_credits():
 
 def show_A():
     screen.fill(C4)
+    imprimir_pantalla_fons('assets/fondo12.png')
     font = pygame.font.SysFont('Arial', 40)
     texts = [
         font.render('Ajuda', True, WHITE),

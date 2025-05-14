@@ -334,8 +334,7 @@ def main():
                     if event.key == pygame.K_RETURN:
                         game_state = 'menu'
                         gs.start_time = time.time()
-                    if event.key == pygame.K_ESCAPE:
-                        return
+
         if game_state == 'ajuda':
             show_A()
             for event in pygame.event.get():
@@ -345,8 +344,6 @@ def main():
                     if event.key == pygame.K_RETURN:
                         game_state = 'menu'
                         gs.start_time = time.time()
-                    if event.key == pygame.K_ESCAPE:
-                        return
 
         elif game_state == 'playing':
             for event in pygame.event.get():
@@ -489,7 +486,12 @@ def main():
                                     waiting = False
                                     pygame.mixer.music.play()
                                 if event.key == pygame.K_ESCAPE:
-                                    return
+                                    game_state = 'menu'
+                                    show_start_menu()
+                                    gs.reset(gs.level)
+                                    gs.start_time = time.time()
+                                    pygame.mixer.music.load('assets/musica2.mp3')
+                                    pygame.mixer.music.play()
 
 
             # Drawing
@@ -548,6 +550,9 @@ def main():
                 screen.blit(death_text1, (WIDTH // 2 - death_text1.get_width() // 2, HEIGHT // 2.3))
                 screen.blit(death_text2, (WIDTH // 2 - death_text2.get_width() // 2, HEIGHT // 2))
                 screen.blit(death_text3, (WIDTH // 2 - death_text3.get_width() // 2, HEIGHT // 1.7))
+                gs.start_time = time.time()
+                pygame.mixer.music.load('assets/musica_mort.mp3')
+
                 if keys[pygame.K_ESCAPE]:
                     game_state = 'menu'
                     gs.reset(gs.level)
@@ -556,6 +561,7 @@ def main():
                     pygame.mixer.music.play()
                 if keys[pygame.K_r]:
                     gs.reset(gs.level)
+                    pygame.mixer.music.load('assets/musica1.mp3')
                     gs.start_time = time.time()
                     pygame.mixer.music.play()
 

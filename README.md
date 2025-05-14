@@ -2,7 +2,7 @@
 
 <p>Prepárate para embarcarte en una emocionante aventura de plataformas en Pokémon Quest, un juego que combina la nostalgia del universo Pokémon con la adrenalina de los desafíos arcade. En este mundo lleno de color y con un encantador estilo visual cúbico, asumirás el rol de un Pokémon intrépido que se lanza a la exploración de islas misteriosas y llenas de secretos por descubrir.
 
-El objetivo principal de tu misión es recolectar Pokéballs, que funcionan como monedas valiosas repartidas a lo largo de cada nivel. Estas Pokéballs no solo representan tu progreso, sino que también son esenciales para desbloquear nuevas zonas, debido a que si no las recojes todas mueres y no puedes pasar de nivel. Sin embargo, no todo será tan sencillo…
+El objetivo principal de tu misión es recolectar Pokéballs, que son monedas valiosas repartidas a lo largo de cada nivel. Estas Pokéballs no solo representan tu progreso, sino que también son esenciales para desbloquear nuevas zonas, debido a que si no las recojes todas mueres y no puedes pasar de nivel. Sin embargo, no todo será tan sencillo…
 
 A lo largo del camino te enfrentarás a una gran variedad de enemigos salvajes y obstáculos que tratarán de detenerte a toda costa. Desde pequeños Pokémon hostiles hasta vacios enormes, cualquier contacto con ellos será fatal: si te tocan, pierdes la partida y tendrás que volver a empezar desde el inicio del nivel, dependiendo de tu progreso.
 

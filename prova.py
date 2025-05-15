@@ -249,6 +249,7 @@ def show_credits():
         font.render('Creadors del joc:   Arnau, Moha i Sergio', True, WHITE),
         font.render('Diseny: Arnau i Moha', True, WHITE),
         font.render('Codi: Chatgpt, Arnau, Sergio, Xavi', True, WHITE),
+        font.render('Musica: tiktok i musiques sense copyright', True, WHITE),
         font.render('ENTER - Menu', True, WHITE)
     ]
     for i, text in enumerate(texts):
